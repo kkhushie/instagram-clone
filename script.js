@@ -227,7 +227,9 @@ else{
 
 cross.addEventListener("click",()=>{
 preview.style.display="none"
+    grow=0
 })          
 xmark.addEventListener("click",()=>{
 preview.style.display="none"
+    grow=0
 })          
