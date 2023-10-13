@@ -1,48 +1,23 @@
+const hearts = document.querySelectorAll(".posts .fa-heart");
 
-// stories.forEach(function(){
-//   story.addEventListener("click",()=>{
-//     alert("hellow")
-// })  
-// });
-// stories.addEventListener("click",fuction())
-const heart = document.querySelector(".posts .fa-heart")
-const heart1 = document.querySelector(".first-post .fa-heart")
-const heart2 = document.querySelector(".second-post .fa-heart")
-const heart3 = document.querySelector(".third-post .fa-heart")
-const heart4 = document.querySelector(".forth-post .fa-heart")
-const heart5 = document.querySelector(".fifth-post .fa-heart")
-const heart6 = document.querySelector(".sixth-post .fa-heart")
-const heart7 = document.querySelector(".seventh-post .fa-heart")
-const heart8 = document.querySelector(".eighth-post .fa-heart")
-const heart9 = document.querySelector(".ninth-post .fa-heart")
-const heart10 = document.querySelector(".tenth-post .fa-heart")
+hearts.forEach((heart, index) => {
+  let isLiked = false;
 
-const arr = [heart1, heart2,heart3, heart4, heart5, heart6, heart7, heart8, heart9,heart10];
+  const toggleLike = () => {
+    isLiked = !isLiked;
+    if (isLiked) {
+      heart.classList.add("fa-solid");
+      heart.style.color = "red";
+    } else {
+      heart.classList.remove("fa-solid");
+      heart.style.color = "white";
+    }
+  };
 
-
-let isliked = true;
-let clicked = true;
-const liked = () => {
-    clicked = false
-    heart.classList.add("fa-solid");
-    heart.style.color = "red"
-}
-const unlike = () => {
-    clicked = true
-    heart.classList.replace("fa-solid", "fa-regular");
-    heart.style.color = "white"
-}
- heart.addEventListener("click", () => {
-     if (clicked) {
-            liked()
-        }
-        else {
-            unlike();
-        }
-    })
-    arr.forEach(function (elem) {
-   
-})
+  heart.addEventListener("click", () => {
+    toggleLike();
+  });
+});
 
 // elem.addEventListener("click",()=>{
 //     alert("hello")
